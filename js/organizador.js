@@ -1277,7 +1277,8 @@
       });
 	  
 	  $("#box2").mouseleave(function(){
-		$("#buscar").prop('disabled', true);
+        if ($("#buscar").is(':focus')) return;
+	  	$("#buscar").prop('disabled', true);
 		$("#box2").stop();
         $("#box2").animate({right: '-488px'});
       });
